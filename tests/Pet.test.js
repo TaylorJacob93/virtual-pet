@@ -1,6 +1,7 @@
 const Pet = require('../virtual-pet/Pet.js');
 
 
+
 describe('Pet constructor', () => { 
     it('returns an object', () => { 
         expect(new Pet()).toBeInstanceOf(Object); 
@@ -32,7 +33,7 @@ describe('growUp', () => {
     expect(pet.fitness).toEqual(7);
     });
   });
-describe('walking with fitness < 5', () => {
+describe('walk', () => {
     it('increases fitness by to a maximum of 10', () => {
         const pet = new Pet('fido');
     
@@ -42,5 +43,14 @@ describe('walking with fitness < 5', () => {
         expect(pet.fitness).toEqual(10);
       });
     });
+describe('feed', () => {
+    it('decreases instances hunger by 3', () => { 
+        const pet = new Pet('Fido');
+        pet.hunger = 7;
+        pet.feed();
+
+    expect(pet.hunger).toBe(4);
+    });
+});
 
 
